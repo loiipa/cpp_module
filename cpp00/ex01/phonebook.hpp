@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 21:54:02 by cjang             #+#    #+#             */
-/*   Updated: 2022/01/27 02:18:49 by cjang            ###   ########.fr       */
+/*   Created: 2022/01/27 02:23:26 by cjang             #+#    #+#             */
+/*   Updated: 2022/01/27 02:39:40 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
-int	main(int argc, char **argv)
-{
-	if (argc <= 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	else
-	{
-		for (int i = 1; i < argc; i++)
-			std::cout << argv[i];
-	}
-	std::cout << std::endl;
-	return (0);
-}
+class	Phonebook {
+public:
+
+	Phonebook(void);
+	~Phonebook(void);
+	
+	void	order_branch(void);
+	void	add(void);
+	void	exit(void);
+	void	search(void);
+	void	etc(void);
+	
+};
+
+#endif

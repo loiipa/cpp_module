@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 21:54:02 by cjang             #+#    #+#             */
-/*   Updated: 2022/01/27 02:18:49 by cjang            ###   ########.fr       */
+/*   Created: 2022/01/27 02:23:13 by cjang             #+#    #+#             */
+/*   Updated: 2022/01/27 02:39:11 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string>
+#include <iomanip>
 #include <iostream>
+#include "phonebook.hpp"
 
-int	main(int argc, char **argv)
-{
-	if (argc <= 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	else
-	{
-		for (int i = 1; i < argc; i++)
-			std::cout << argv[i];
-	}
-	std::cout << std::endl;
-	return (0);
+Phonebook::Phonebook(void) {
+
+	std::cout << "Phonebook created" << std::endl;
+	return;
+
+}
+Phonebook::~Phonebook(void) {
+
+	std::cout << "Phonebook destroyed" << std::endl;
+	return;
+
 }
