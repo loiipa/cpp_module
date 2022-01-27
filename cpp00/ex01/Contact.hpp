@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 13:22:42 by cjang             #+#    #+#             */
-/*   Updated: 2022/01/27 21:17:52 by cjang            ###   ########.fr       */
+/*   Updated: 2022/01/28 01:45:25 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,25 @@
 class Contact {
 private:
 
-	std::string		_first_name;
-	std::string		_last_name;
-	std::string		_nick_name;
-	std::string		_phone_number;
-	std::string		_darkest_secret;
+	static int		_contactCount;
+	std::string		_firstName;
+	std::string		_lastName;
+	std::string		_nickName;
+	std::string		_phoneNumber;
+	std::string		_darkestSecret;
 
 public:
 
 	Contact(void);
 	~Contact();
 
-	std::string	get_firstname(void) const;
-	std::string	get_lastname(void) const;
-	std::string	get_nickname(void) const;
-	std::string	get_phone_number(void) const;
-	std::string	get_darkest_secret(void) const;
-	void	setcontact(std::string s[5]);
+	std::string		getFirstname(void) const;
+	std::string		getLastname(void) const;
+	std::string		getNickname(void) const;
+	std::string		getPhoneNumber(void) const;
+	std::string		getDarkestSecret(void) const;
+	void			setContact(std::string s[5]);
+	
 };
-
 
 #endif
