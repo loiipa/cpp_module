@@ -6,12 +6,13 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 00:35:27 by cjang             #+#    #+#             */
-/*   Updated: 2022/01/28 14:22:20 by cjang            ###   ########.fr       */
+/*   Updated: 2022/01/28 14:55:17 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
+#include <ctime>
 
 int	Account::getNbAccounts( void ) {
 
@@ -149,7 +150,21 @@ void	Account::displayStatus( void ) const {
 
 void	Account::_displayTimestamp( void ) {
 
-	std::cout << "[19920104_091532] ";
+	time_t		timer;
+	struct tm	*timeinfo;
+
+	time(&timer);
+	timeinfo = localtime(&timer);
+
+	std::cout << "[" << timeinfo->tm_year + 1900;
+	if (timeinfo->tm_mon < 9)
+		std::cout << "0";
+	std::cout << timeinfo->tm_mon + 1;
+	if (timeinfo->tm_mday < 10)
+		std::cout << "0";
+	std::cout << timeinfo->tm_mday << "_";
+	std::cout << timeinfo->tm_hour << timeinfo->tm_min << timeinfo->tm_sec << "] ";
+
 	return ;
 }
 
