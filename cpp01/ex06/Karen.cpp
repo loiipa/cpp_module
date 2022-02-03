@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 21:57:01 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/03 18:53:57 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/03 23:30:30 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	Karen::complain(std::string level) {
 			break;
 		}
 		case 4:
-			std::cout << "[Not complain.]" << std::endl;
+			std::cout << "[Not complain]" << std::endl;
 	}
 	return ;
 }
