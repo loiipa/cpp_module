@@ -6,13 +6,13 @@
 #    By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/01 22:46:07 by cjang             #+#    #+#              #
-#    Updated: 2022/02/03 18:23:43 by cjang            ###   ########.fr        #
+#    Updated: 2022/02/03 18:37:13 by cjang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = g++ -std=c++98
 CXXFLAGS = -Wall -Wextra -Werror
-TARGET = ex05
+TARGET = karenFilter
 
 SRCS = main.cpp Karen.cpp
 OBJS = $(SRCS:.cpp=.o)

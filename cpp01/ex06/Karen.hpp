@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 21:56:27 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/03 18:34:39 by cjang            ###   ########.fr       */
+/*   Created: 2022/02/02 21:57:08 by cjang             #+#    #+#             */
+/*   Updated: 2022/02/02 22:21:28 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#ifndef KAREN_HPP
+# define KAREN_HPP
 
-int	main(void)
-{
-	Karen	karen;
+# include <string>
 
-	karen.complain("debug");
-	karen.complain("info");
-	karen.complain("warning");
-	karen.complain("error");
+class Karen {
+private:
 
-	return (0);
-}
+	void	debug( void );
+	void	info( void );
+	void	warning( void );
+	void	error( void );
+
+public:
+
+	Karen( void );
+	~Karen();
+	void	complain( std::string level );
+
+};
+
+#endif
