@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/30 15:25:47 by cjang             #+#    #+#             */
-/*   Updated: 2022/01/30 17:23:15 by cjang            ###   ########.fr       */
+/*   Created: 2022/01/31 12:49:41 by cjang             #+#    #+#             */
+/*   Updated: 2022/02/02 22:13:10 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-int	main(void)
-{
-	Zombie*		zombie = zombieHorde(ZNumber, "ZOMBIEEE");
-	
-	if (zombie == NULL)
-		return (1);
-	
-	for (int i = 0; i < ZNumber; i++)
-		zombie[i].announce();
+# include <string>
 
-	delete [] zombie;
-	return (0);
-}
+class Weapon {
+private:
+
+	std::string		_type;
+
+public:
+
+	Weapon( std::string type);
+	~Weapon();
+	std::string const & getType( void );
+	std::string const & setType( std::string type );
+
+};
+
+#endif

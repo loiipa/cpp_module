@@ -6,14 +6,14 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:39:13 by cjang             #+#    #+#             */
-/*   Updated: 2022/01/30 17:24:39 by cjang            ###   ########.fr       */
+/*   Updated: 2022/01/30 15:59:21 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 #include <iostream>
 
-Zombie::Zombie(void) {
+Zombie::Zombie(void) : _zombieName("zombiee") {
 
 	return ;
 	
@@ -34,12 +34,7 @@ Zombie::~Zombie() {
 	return ;
 
 }
-void	Zombie::initName(std::string name) {
 
-	this->_zombieName = name;
-	return ;
-
-}
 void	Zombie::announce( void ) const {
 
 	std::string		zombieScript;

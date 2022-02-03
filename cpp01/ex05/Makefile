@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/01/30 15:25:00 by cjang             #+#    #+#              #
-#    Updated: 2022/01/30 16:54:00 by cjang            ###   ########.fr        #
+#    Created: 2022/02/01 22:46:07 by cjang             #+#    #+#              #
+#    Updated: 2022/02/01 22:46:17 by cjang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = g++ -std=c++98
 CXXFLAGS = -Wall -Wextra -Werror
-TARGET = ex01
+TARGET = ex05
 
-SRCS = main.cpp Zombie.cpp ZombieHorde.cpp
+SRCS = main.cpp Karen.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(TARGET)

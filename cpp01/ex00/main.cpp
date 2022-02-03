@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/30 15:26:13 by cjang             #+#    #+#             */
-/*   Updated: 2022/01/30 17:17:39 by cjang            ###   ########.fr       */
+/*   Created: 2022/01/30 15:25:47 by cjang             #+#    #+#             */
+/*   Updated: 2022/01/30 16:39:21 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "Zombie.hpp"
 
-# define ZNumber 42
-
-# include <string>
-
-class Zombie {
-private:
-
-	std::string		_zombieName;
-
-public:
-
-	Zombie( void );
-	Zombie( std::string name );
-	~Zombie();
+int	main(void)
+{
+	Zombie*		zombie1 = newZombie("zombie_heap<1>");
+	Zombie		zombie2("zombie_stack<2>");
+	randomChump("zombie_in_cage<3>");
 	
-	void	initName( std::string name);
-	void	announce( void ) const;
-
-};
-
-Zombie*	zombieHorde(int N, std::string name);
-
-#endif
+	zombie1->announce();
+	zombie2.announce();
+	delete zombie1;
+	
+	return (0);
+}

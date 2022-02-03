@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/30 15:25:47 by cjang             #+#    #+#             */
-/*   Updated: 2022/01/30 17:23:15 by cjang            ###   ########.fr       */
+/*   Created: 2022/02/01 11:15:11 by cjang             #+#    #+#             */
+/*   Updated: 2022/02/01 12:31:10 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
+#include <iostream>
 
-int	main(void)
-{
-	Zombie*		zombie = zombieHorde(ZNumber, "ZOMBIEEE");
-	
-	if (zombie == NULL)
-		return (1);
-	
-	for (int i = 0; i < ZNumber; i++)
-		zombie[i].announce();
+HumanA::HumanA(std::string name, Weapon& weapon) : _name(name), _weapon(&weapon) {
 
-	delete [] zombie;
-	return (0);
+	return ;
+}
+
+HumanA::~HumanA(void) {
+
+	return ;
+}
+
+void HumanA::attack(void) {
+
+	std::cout << this->_name <<  " attack! " << this->_weapon->getType() << std::endl;
+	return ;
 }

@@ -5,23 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/30 15:25:47 by cjang             #+#    #+#             */
-/*   Updated: 2022/01/30 17:23:15 by cjang            ###   ########.fr       */
+/*   Created: 2022/01/31 12:31:20 by cjang             #+#    #+#             */
+/*   Updated: 2022/01/31 12:46:51 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <string>
+#include <iostream>
 
 int	main(void)
 {
-	Zombie*		zombie = zombieHorde(ZNumber, "ZOMBIEEE");
-	
-	if (zombie == NULL)
-		return (1);
-	
-	for (int i = 0; i < ZNumber; i++)
-		zombie[i].announce();
+	std::string		str = "HI THI IS BRAIN";
+	std::string*	str_ptr = &str;
+	std::string&	str_ref = str;
 
-	delete [] zombie;
+	std::cout << "<address>" << std::endl;
+	std::cout << "str     address  " << &str << std::endl;
+	std::cout << "str_ptr address  " << str_ptr << std::endl;
+	std::cout << "str_ref address  " << &str_ref << std::endl;
+
+	std::cout << "<string>" << std::endl;
+	std::cout << "str      " << str << std::endl;
+	std::cout << "str_ptr  " << *str_ptr << std::endl;
+	std::cout << "str_ref  " << str_ref << std::endl;
 	return (0);
 }
