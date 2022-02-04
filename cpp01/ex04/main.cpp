@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:38:47 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/01 21:58:08 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/04 13:04:23 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	replaceS1toS2(std::ifstream& file, std::string& filename, std::string
 	std::string		strAfter;
 	int				iBefore;
 	int				iAfter;
-	
+
 	std::getline(file, strBefore);
 	while (!file.eof())
 	{
@@ -63,17 +63,17 @@ int	main(int argc, char **argv)
 
 	if (argc != 4)
 		return errorMessage("argument : [filename] [string1] [string2]");
-	
+
 	filename = argv[1];
 	s1 = argv[2];
 	s2 = argv[3];
-	
+
 	if (filename.length() == 0 || s1.length() == 0 || s2.length() == 0)
 		return errorMessage("Empty string - NOT allow.");
-	
+
 	file.open(filename);
 
-	if (file == 0)
+	if (file.fail())
 		return errorMessage("NOT exist file.");
 
 	return replaceS1toS2(file, filename, s1, s2);
