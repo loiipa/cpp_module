@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 12:49:41 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/02 22:13:10 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/04 13:41:06 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ private:
 
 public:
 
-	Weapon( std::string type);
+	Weapon( std::string type );
 	~Weapon();
 	std::string const & getType( void );
 	std::string const & setType( std::string type );

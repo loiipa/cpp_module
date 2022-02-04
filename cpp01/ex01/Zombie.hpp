@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:26:13 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/04 12:31:34 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/04 13:40:48 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ private:
 
 public:
 
+	Zombie( void );
 	Zombie( std::string name );
 	~Zombie();
 

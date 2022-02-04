@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 11:15:03 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/01 12:00:40 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/04 17:20:56 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ class HumanA {
 private:
 
 	std::string		_name;
-	Weapon*			_weapon;
+	Weapon&			_weapon;
 
 public:
 
-	HumanA( std::string name, Weapon& weapon);
+	HumanA( std::string name, Weapon& weapon );
 	~HumanA();
 	void	attack( void );
 
