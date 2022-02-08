@@ -2,3 +2,4 @@
 .setting.json
 setting.json
 *.o
+.vscode

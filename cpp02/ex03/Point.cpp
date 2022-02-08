@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 17:18:39 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/08 18:57:05 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/09 01:07:31 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,18 @@ Point::Point( void ) : x( 0 ), y( 0 ) {
 	return ;
 }
 
-Point::Point( const float x, const float y ) : x( x ), y( y ) {
+Point::Point( float const x, float const y ) : x( x ), y( y ) {
 
 	return ;
 }
 
-Point::Point( Point const & src ) {
+Point::Point( Fixed const x, Fixed const y ) : x( x ), y( y ) {
 
-	*this = src;
+	return ;
+}
+
+Point::Point( Point const & src ) : x( src.getX() ), y( src.getY() ){
+
 	return ;
 }
 
@@ -43,16 +47,17 @@ Fixed	Point::getY( void ) const {
 	return this->y;
 }
 
+Fixed	Point::outerProduct( Point const & a, Point const & b) {
+
+	return a.getX() * b.getY() - a.getY() * b.getX();
+}
 Point &	Point::operator=( Point const & rhs ) {
 
-	std::cout << "operator=" << std::endl;
-	std::cout << rhs.getX().getRawBits() << std::endl;
-	std::cout << rhs.getY().getRawBits() << std::endl;
-
-	this->getX().setRawBits( rhs.getX().getRawBits() );
-	this->getY().setRawBits( rhs.getY().getRawBits() );
-
-	std::cout << this->getX().getRawBits() << std::endl;
-	std::cout << this->getY().getRawBits() << std::endl;
+	(void) rhs;
 	return *this;
+}
+
+Point	Point::operator-( Point const & rhs ) const {
+
+	return Point( this->getX() - rhs.getX(), this->getY() - rhs.getY() );
 }
