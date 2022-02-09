@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:38:47 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/04 13:04:23 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/09 18:05:20 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 #include <fstream>
 #include <string>
 
-static int	errorMessage(std::string message)
+static int errorMessage(std::string message)
 {
 	std::cout << message << std::endl;
 	return (1);
 }
 
-static int	replaceS1toS2(std::ifstream& file, std::string& filename, std::string& s1, std::string& s2)
+static int replaceS1toS2(std::ifstream &file, std::string &filename, std::string &s1, std::string &s2)
 {
-	std::ofstream 	fileReplace(filename + (std::string)".replace");
-	std::string		strBefore;
-	std::string		strAfter;
-	int				iBefore;
-	int				iAfter;
+	std::ofstream fileReplace(filename + (std::string) ".replace");
+	std::string strBefore;
+	std::string strAfter;
+	int iBefore;
+	int iAfter;
 
 	std::getline(file, strBefore);
 	while (!file.eof())
@@ -49,17 +49,36 @@ static int	replaceS1toS2(std::ifstream& file, std::string& filename, std::string
 		fileReplace << strAfter << std::endl;
 		std::getline(file, strBefore);
 	}
+	if (strBefore.length() > 1)
+	{
+		iBefore = 0;
+		iAfter = 0;
+		strAfter.clear();
+		while (iAfter != -1)
+		{
+			iAfter = strBefore.find(s1, iBefore);
+			if (iAfter == -1)
+				strAfter += strBefore.substr(iBefore, iAfter);
+			else
+			{
+				strAfter += strBefore.substr(iBefore, iAfter - iBefore);
+				strAfter += s2;
+				iBefore = iAfter + s1.length();
+			}
+		}
+		fileReplace << strAfter;
+	}
 	file.close();
 	fileReplace.close();
 	return (0);
 }
 
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
-	std::string		filename;
-	std::string		s1;
-	std::string		s2;
-	std::ifstream	file;
+	std::string filename;
+	std::string s1;
+	std::string s2;
+	std::ifstream file;
 
 	if (argc != 4)
 		return errorMessage("argument : [filename] [string1] [string2]");
