@@ -6,13 +6,14 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 19:28:38 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/08 17:13:05 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/09 14:51:34 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
-#include <iostream>
+# include <iostream>
+# include <ostream>
 
 class Fixed {
 private:

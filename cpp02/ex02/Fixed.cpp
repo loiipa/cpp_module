@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 19:28:39 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/08 17:12:42 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/09 14:33:34 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Fixed::Fixed( int const i ) : _fixedPoint( i << _fractionalBits ) {
 	return ;
 }
 
-Fixed::Fixed( float const f ) : _fixedPoint( (int)roundf(f * (1 << 8)) ){
+Fixed::Fixed( float const f ) : _fixedPoint( (int)roundf(f * (1 << _fractionalBits)) ){
 
 	// std::cout << "Float constructor called" << std::endl;
 	return ;
@@ -193,7 +193,7 @@ void	Fixed::setRawBits( int const raw ) {
 
 float	Fixed::toFloat( void ) const {
 
-	return (float)(this->_fixedPoint) / (1 << 8);
+	return (float)(this->_fixedPoint) / (1 << Fixed::_fractionalBits);
 }
 
 int		Fixed::toInt( void ) const {

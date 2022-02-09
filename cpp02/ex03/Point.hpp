@@ -6,13 +6,13 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 17:18:47 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/09 01:07:19 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/09 14:51:42 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef POINT_HPP
 # define POINT_HPP
-#include "Fixed.hpp"
+# include "Fixed.hpp"
 
 class Point {
 
@@ -31,9 +31,9 @@ public:
 
 	Fixed	getX( void ) const;
 	Fixed	getY( void ) const;
-	
+
 	static Fixed	outerProduct( Point const & a, Point const & b );
-	
+
 	Point &		operator=( Point const & rhs );
 	Point		operator-( Point const & rhs ) const;
 };
