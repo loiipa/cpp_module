@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 01:13:51 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/10 15:30:50 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/11 01:37:08 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ ClapTrap::ClapTrap( std::string name ) : _name( name ), _hitPoints( 10 ), _energ
 	return ;
 }
 
-ClapTrap::ClapTrap( ClapTrap const & src ) : _hitPoints( 10 ), _energyPoints( 10 ), _attackDamage( 0 )
+ClapTrap::ClapTrap( ClapTrap const & src )
+: _name( src._name ), _hitPoints( src._hitPoints ), _energyPoints( src._energyPoints ), _attackDamage( src._attackDamage )
 {
 	std::cout << "ClapTrap <" << this->_name << "> is copied!" << std::endl;
-	*this = src;
 	return ;
 }
 
@@ -61,29 +61,33 @@ void	ClapTrap::attack( std::string const & target )
 
 void	ClapTrap::takeDamage( unsigned int amount )
 {
-	if (this->_hitPoints > amount)
+	if (this->_hitPoints == 0)
+	{
+		std::cout << "ClapTrap <" << this->_name << "> already died." << std::endl;
+		return ;
+	}
+	else if (this->_hitPoints > amount)
 		this->_hitPoints -= amount;
 	else
 		this->_hitPoints = 0;
 
-	std::cout << "ClapTrap <" << _name << "> HP (" << this->_hitPoints << ")" << std::endl;
+	std::cout << "ClapTrap <" << this->_name << "> HP (" << this->_hitPoints << ")" << std::endl;
 	if (this->_hitPoints == 0)
-		std::cout << "ClapTrap <" << _name << "> died." << std::endl;
+		std::cout << "ClapTrap <" << this->_name << "> died." << std::endl;
 
 	return ;
-
 }
 
 void	ClapTrap::beRepaired( unsigned int amount )
 {
 	if (this->_hitPoints == 0)
-		std::cout << "ClapTrap <" << _name << "> already died." << std::endl;
+		std::cout << "beRepaired - ClapTrap <" << this->_name << "> already died." << std::endl;
 	else
 	{
 		this->_hitPoints += amount;
-		std::cout << "ClapTrap <" << _name << "> is repaired (" << amount << ")" << std::endl;
+		std::cout << "ClapTrap <" << this->_name << "> is repaired (" << amount << ")" << std::endl;
 	}
-	std::cout << "ClapTrap <" << _name << "> HP (" << this->_hitPoints << ")" << std::endl;
+	std::cout << "ClapTrap <" << this->_name << "> HP (" << this->_hitPoints << ")" << std::endl;
 	return ;
 }
 

@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/02/10 00:40:25 by cjang             #+#    #+#              #
-#    Updated: 2022/02/11 00:13:26 by cjang            ###   ########.fr        #
+#    Created: 2022/02/11 00:40:32 by cjang             #+#    #+#              #
+#    Updated: 2022/02/11 01:06:51 by cjang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = g++ -std=c++98
 CXXFLAGS = -Wall -Wextra -Werror
-TARGET = ex01
+TARGET = ex03
 
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(TARGET)
