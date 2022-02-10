@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 00:50:36 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/10 15:25:11 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/10 21:18:53 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class ClapTrap
 {
-private:
+protected:
 
 	std::string		_name;
 	unsigned int	_hitPoints;

@@ -6,24 +6,27 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 00:49:37 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/10 17:29:00 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/10 21:55:29 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main( void )
 {
-	ClapTrap	ct1("roro");
-	ClapTrap	ct2;
-	ClapTrap	ct3("acro");
+	ScavTrap	ct1("roro");
+	ScavTrap	ct2;
+	ScavTrap	ct3("acro");
 
 	ct2 = ct3;
 
 	std::cout << std::endl;
 
-	ct1.attack( ct2.getName() );
-	ct2.takeDamage( ct2.getAttackDamage() );
+	for (int i = 0; i < 5; i++)
+	{
+		ct1.attack( ct2.getName() );
+		ct2.takeDamage( ct2.getAttackDamage() );
+	}
 
 	std::cout << std::endl;
 

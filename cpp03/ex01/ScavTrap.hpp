@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/10 00:49:37 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/10 17:29:00 by cjang            ###   ########.fr       */
+/*   Created: 2022/02/10 16:10:54 by cjang             #+#    #+#             */
+/*   Updated: 2022/02/10 21:39:31 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 #include "ClapTrap.hpp"
 
-int	main( void )
+class ScavTrap : public ClapTrap
 {
-	ClapTrap	ct1("roro");
-	ClapTrap	ct2;
-	ClapTrap	ct3("acro");
+public:
 
-	ct2 = ct3;
+	ScavTrap( void );
+	ScavTrap( std::string name );
+	ScavTrap( ScavTrap const & src );
+	~ScavTrap( void );
 
-	std::cout << std::endl;
+	ScavTrap &	operator=( ScavTrap const & rhs );
 
-	ct1.attack( ct2.getName() );
-	ct2.takeDamage( ct2.getAttackDamage() );
+	void	attack( std::string const & target );
 
-	std::cout << std::endl;
+	void	highFivesGuys( void );
+};
 
-	ct2.attack( ct1.getName() );
-	ct1.takeDamage( ct2.getAttackDamage() );
-
-	std::cout << std::endl;
-
-	ct1.beRepaired( 1 );
-	ct2.beRepaired( 1 );
-
-	std::cout << std::endl;
-
-	return 0;
-}
+#endif
