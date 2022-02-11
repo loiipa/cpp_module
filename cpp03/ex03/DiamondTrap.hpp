@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 01:08:21 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/11 01:31:13 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/11 13:47:21 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 
 class DiamondTrap : public FragTrap, public ScavTrap
 {
+private:
+
+	std::string	_name;
+
 public:
 
 	DiamondTrap( void );
@@ -25,6 +29,9 @@ public:
 	~DiamondTrap( void );
 
 	DiamondTrap &	operator=( DiamondTrap const & rhs );
+
+	void	attack( std::string const & target );
+	void	whoAmI( void );
 };
 
 #endif

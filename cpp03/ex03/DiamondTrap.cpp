@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 01:09:05 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/11 01:34:33 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/11 14:52:47 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,45 +15,65 @@
 /* constructor */
 DiamondTrap::DiamondTrap( void )
 {
-	this->_hitPoints = FragTrap::_hitPoints;
-	this->_energyPoints = ScavTrap::_energyPoints;
-	this->_attackDamage = FragTrap::_attackDamage;
+	this->DiamondTrap::_name = "_clap_name";
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 30;
 	
-	std::cout << "DiamondTrap <> is created!" << std::endl;
+	std::cout << "DiamondTrap <" << this->_name << "> is created!" << std::endl;
 	return ;
 }
 
 DiamondTrap::DiamondTrap( std::string name ) : ClapTrap( name ), FragTrap( name ), ScavTrap( name )
 {
-	this->_hitPoints = FragTrap::_hitPoints;
-	this->_energyPoints = ScavTrap::_energyPoints;
-	this->_attackDamage = FragTrap::_attackDamage;
+	this->DiamondTrap::_name = name + "_clap_name";
 
-	std::cout << "DiamondTrap <" << this->getName() << "> is created!" << std::endl;
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 30;
+
+	std::cout << "DiamondTrap <" << this->_name << "> is created!" << std::endl;
 	return ;
 }
 
 DiamondTrap::DiamondTrap( DiamondTrap const & src ) : ClapTrap( src ), FragTrap( src ), ScavTrap( src )
 {
-	std::cout << "DiamondTrap <" << this->getName() << "> is copied!" << std::endl;
+	this->DiamondTrap::_name = src.DiamondTrap::_name;
+	std::cout << "DiamondTrap <" << this->_name << "> is copied!" << std::endl;
 	return ;
 }
 
 /* destructor */
 DiamondTrap::~DiamondTrap( void )
 {
-	std::cout << "DiamondTrap <" << this->getName() << "> is destroyed." << std::endl;
+	std::cout << "DiamondTrap <" << this->_name << "> is destroyed." << std::endl;
 	return ;
 }
 
 /* operator */
 DiamondTrap &	DiamondTrap::operator=( DiamondTrap const & src )
 {
-	this->_name = src._name;
-	this->_hitPoints = src._hitPoints;
-	this->_energyPoints = src._energyPoints;
-	this->_attackDamage = src._attackDamage;
+	this->DiamondTrap::_name = src.DiamondTrap::_name;
+	this->ClapTrap::_name = src.ClapTrap::_name;
+	
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 30;
 
-	std::cout << "DiamondTrap <" << this->getName() << "> is assigned!" << std::endl;
+	std::cout << "DiamondTrap <" << this->_name << "> is assigned!" << std::endl;
 	return *this;
 }
+
+/* member function */
+void	DiamondTrap::whoAmI( void )
+{
+	std::cout << "DT name? <" << this->DiamondTrap::_name << ">" << std::endl;
+	std::cout << "CT name? <" << this->ClapTrap::_name << ">" << std::endl;
+	return ;
+}
+void	DiamondTrap::attack( std::string const & target )
+{
+	ScavTrap::attack( target );
+	return ;
+}
+// using -- attack

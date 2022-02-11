@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 00:49:37 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/11 01:07:30 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/11 14:56:01 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,13 @@ int	main( void )
 		DiamondTrap	dt3("acro");
 		DiamondTrap	dt4;
 
-		std::cout << "dt2: "<< dt2.getName() << std::endl;
+		std::cout << "dt2: ";
+		dt2.whoAmI();
+		std::cout << std::endl;
 		dt4 = dt3;
-		std::cout << "dt4: "<< dt4.getName() << std::endl;
+		std::cout << "dt4: ";
+		dt4.whoAmI();
+		std::cout << std::endl;
 	}
 
 	std::cout << std::endl;
@@ -50,8 +54,21 @@ int	main( void )
 		dt1.beRepaired( 1 );
 		dt2.beRepaired( 1 );
 
+		std::cout << std::endl;
+
 		dt1.highFivesGuys();
 		dt2.highFivesGuys();
+
+		std::cout << std::endl;
+
+		dt1.guardGate();
+		dt2.guardGate();
+
+		std::cout << std::endl;
+
+		dt1.whoAmI();
+		dt2.whoAmI();
+
 		std::cout << std::endl;
 	}
 
