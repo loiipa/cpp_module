@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 16:10:39 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/11 00:57:10 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/11 17:38:11 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ScavTrap::ScavTrap( void )
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
-	
+
 	std::cout << "ScavTrap <> is created!" << std::endl;
 	return ;
 }
@@ -33,8 +33,12 @@ ScavTrap::ScavTrap( std::string name ) : ClapTrap( name )
 	return ;
 }
 
-ScavTrap::ScavTrap( ScavTrap const & src ) : ClapTrap( src )
+ScavTrap::ScavTrap( ScavTrap const & src ) : ClapTrap( src._name )
 {
+	this->_hitPoints = src._hitPoints;
+	this->_energyPoints = src._energyPoints;
+	this->_attackDamage = src._attackDamage;
+
 	std::cout << "ScavTrap <" << this->getName() << "> is copied!" << std::endl;
 	return ;
 }

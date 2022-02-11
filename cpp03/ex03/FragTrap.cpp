@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 00:49:18 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/11 00:59:59 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/11 18:56:48 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ FragTrap::FragTrap( void )
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_attackDamage = 30;
-	
+
 	std::cout << "FragTrap <> is created!" << std::endl;
 	return ;
 }
@@ -33,8 +33,12 @@ FragTrap::FragTrap( std::string name ) : ClapTrap( name )
 	return ;
 }
 
-FragTrap::FragTrap( FragTrap const & src ) : ClapTrap( src )
+FragTrap::FragTrap( FragTrap const & src ) : ClapTrap( src._name )
 {
+	this->_hitPoints = src._hitPoints;
+	this->_energyPoints = src._energyPoints;
+	this->_attackDamage = src._attackDamage;
+
 	std::cout << "FragTrap <" << this->getName() << "> is copied!" << std::endl;
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 01:08:21 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/11 13:47:21 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/11 16:23:49 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ public:
 
 	DiamondTrap &	operator=( DiamondTrap const & rhs );
 
-	void	attack( std::string const & target );
-	void	whoAmI( void );
+	void		attack( std::string const & target );
+	void		whoAmI( void );
+	std::string	getName( void ) const;
 };
 
 #endif
