@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 00:49:47 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/14 16:51:04 by cjang            ###   ########.fr       */
+/*   Created: 2022/02/14 00:49:53 by cjang             #+#    #+#             */
+/*   Updated: 2022/02/14 16:36:02 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "Wrong.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
+# include <string>
+# include <iostream>
 
-int	main()
+class Animal
 {
-	const Animal*	j = new Dog();
-	const Animal*	i = new Cat();
+protected:
 
-	delete i;
-	delete j;
-}
+	std::string		type;
+
+public:
+
+	Animal( void );
+	Animal( Animal const & src );
+	virtual ~Animal( void );
+
+	Animal &	operator=( Animal const & rhs );
+
+	std::string		getType( void ) const;
+	virtual void	makeSound( void ) const;
+
+};
+
+#endif

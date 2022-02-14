@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Wrong.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 00:49:53 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/14 17:51:52 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/14 16:27:50 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef WRONG_HPP
+# define WRONG_HPP
 # include <string>
 # include <iostream>
 
-class Animal
+class WrongAnimal
 {
 protected:
 
@@ -23,14 +23,42 @@ protected:
 
 public:
 
-	Animal( void );
-	Animal( Animal const & src );
-	virtual ~Animal( void );
+	WrongAnimal( void );
+	WrongAnimal( WrongAnimal const & src );
+	~WrongAnimal( void );
 
-	Animal &	operator=( Animal const & rhs );
+	WrongAnimal &	operator=( WrongAnimal const & rhs );
 
 	std::string		getType( void ) const;
-	virtual void	makeSound( void ) const;
+	void	makeSound( void ) const;
+
+};
+
+class WrongCat : public WrongAnimal
+{
+public:
+
+	WrongCat( void );
+	WrongCat( WrongCat const & src );
+	~WrongCat( void );
+
+	WrongCat &	operator=( WrongCat const & rhs );
+
+	void			makeSound( void ) const;
+
+};
+
+class WrongDog : public WrongAnimal
+{
+public:
+
+	WrongDog( void );
+	WrongDog( WrongDog const & src );
+	~WrongDog( void );
+
+	WrongDog &	operator=( WrongDog const & rhs );
+
+	void			makeSound( void ) const;
 
 };
 

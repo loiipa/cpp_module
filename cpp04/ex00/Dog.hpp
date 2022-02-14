@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 00:49:47 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/14 16:51:04 by cjang            ###   ########.fr       */
+/*   Created: 2022/02/14 15:18:10 by cjang             #+#    #+#             */
+/*   Updated: 2022/02/14 15:58:33 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "Wrong.hpp"
+#ifndef DOG_HPP
+# define DOG_HPP
+# include "Animal.hpp"
 
-int	main()
+class Dog : public Animal
 {
-	const Animal*	j = new Dog();
-	const Animal*	i = new Cat();
+public:
 
-	delete i;
-	delete j;
-}
+	Dog( void );
+	Dog( Dog const & src );
+	~Dog( void );
+
+	Dog &	operator=( Dog const & rhs );
+
+	void			makeSound( void ) const;
+
+};
+
+#endif

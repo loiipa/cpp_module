@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 00:49:47 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/14 16:51:04 by cjang            ###   ########.fr       */
+/*   Created: 2022/02/14 17:26:01 by cjang             #+#    #+#             */
+/*   Updated: 2022/02/14 17:28:25 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "Wrong.hpp"
+#include "Brain.hpp"
 
-int	main()
+Brain::Brain( void )
 {
-	const Animal*	j = new Dog();
-	const Animal*	i = new Cat();
+	return ;
+}
 
-	delete i;
-	delete j;
+Brain::Brain( Brain const & src )
+{
+	return ;
+}
+
+Brain::~Brain( void )
+{
+	return ;
+}
+
+Brain &	Brain::operator=( Brain const & rhs )
+{
+	return *this;
 }
