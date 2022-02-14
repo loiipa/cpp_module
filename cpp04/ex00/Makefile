@@ -6,15 +6,15 @@
 #    By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 00:49:38 by cjang             #+#    #+#              #
-#    Updated: 2022/02/14 16:51:19 by cjang            ###   ########.fr        #
+#    Updated: 2022/02/14 16:28:22 by cjang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = c++ -std=c++98
 CXXFLAGS = -Wall -Wextra -Werror
-TARGET = ex01
+TARGET = ex00
 
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp Wrong.cpp Brain.cpp
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp Wrong.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(TARGET)

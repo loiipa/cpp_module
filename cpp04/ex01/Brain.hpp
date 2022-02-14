@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 00:49:47 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/14 16:51:04 by cjang            ###   ########.fr       */
+/*   Created: 2022/02/14 16:46:36 by cjang             #+#    #+#             */
+/*   Updated: 2022/02/14 17:27:33 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "Wrong.hpp"
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
+# include <string>
 
-int	main()
+class Brain
 {
-	const Animal*	j = new Dog();
-	const Animal*	i = new Cat();
+public:
 
-	delete i;
-	delete j;
-}
+	std::string	ideas[100];
+	Brain( void );
+	Brain( Brain const & src );
+	~Brain( void );
+
+	Brain &	operator=( Brain const & rhs );
+
+};
+
+#endif
