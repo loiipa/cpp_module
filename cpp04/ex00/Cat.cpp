@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:18:23 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/14 16:00:36 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/15 16:44:06 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /* Constructor */
 Cat::Cat( void )
 {
-	this->Animal::type = "cat";
+	this->Animal::type = "Cat";
 	std::cout << "<Cat default Constructor>" << std::endl;
 	return ;
 }

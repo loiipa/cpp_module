@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:18:23 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/14 16:00:36 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/15 16:44:01 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,15 @@
 /* Constructor */
 Cat::Cat( void )
 {
-	this->Animal::type = "cat";
+	this->brain = new Brain();
+	this->Animal::type = "Cat";
 	std::cout << "<Cat default Constructor>" << std::endl;
 	return ;
 }
 
 Cat::Cat( Cat const & src )
 {
+	this->brain = new Brain( *src.brain );
 	this->Animal::type = src.getType();
 	std::cout << "<Cat copy Constructor>" << std::endl;
 	return ;
@@ -30,6 +32,7 @@ Cat::Cat( Cat const & src )
 /* Destructor */
 Cat::~Cat( void )
 {
+	delete this->brain;
 	std::cout << "<Cat string Destructor>" << std::endl;
 	return ;
 }
@@ -37,14 +40,15 @@ Cat::~Cat( void )
 /* Assignation Operator Overload */
 Cat &	Cat::operator=( Cat const & rhs )
 {
-	std::cout << "<Cat assignation operator>" << std::endl;
+	Brain::setBrain( *this->brain, *rhs.brain );
 	this->Animal::type = rhs.getType();
+	std::cout << "<Cat assignation operator>" << std::endl;
 	return *this;
 }
 
 /* Member Function */
 
-void			Cat::makeSound( void ) const
+void		Cat::makeSound( void ) const
 {
 	std::cout << "meow~!" << std::endl;
 	return ;

@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 16:46:36 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/14 17:27:33 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/15 16:31:15 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ public:
 	~Brain( void );
 
 	Brain &	operator=( Brain const & rhs );
+
+	static void	setBrain( Brain & l, Brain const & r );
 
 };
 

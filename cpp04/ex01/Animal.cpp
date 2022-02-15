@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 00:49:49 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/14 15:22:42 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/15 14:46:17 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ std::string		Animal::getType( void ) const
 	return this->type;
 }
 
-void			Animal::makeSound( void ) const
+void		Animal::makeSound( void ) const
 {
 	std::cout << "Animal!" << std::endl;
 	return ;
