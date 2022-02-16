@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 15:18:10 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/16 14:00:03 by cjang            ###   ########.fr       */
+/*   Created: 2022/02/14 00:49:53 by cjang             #+#    #+#             */
+/*   Updated: 2022/02/16 17:28:28 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
-# include "Animal.hpp"
-# include "Brain.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
+# include <string>
+# include <iostream>
 
-class Dog : public Animal
+class Animal
 {
-private:
+protected:
 
-	Brain	*brain;
+	std::string		type;
 
 public:
 
-	Dog( void );
-	Dog( Dog const & src );
-	~Dog( void );
+	Animal( void );
+	Animal( Animal const & src );
+	virtual ~Animal( void );
 
-	Dog &	operator=( Dog const & rhs );
+	Animal &	operator=( Animal const & rhs );
 
-	void		makeSound( void ) const;
-	Brain*		getBrain( void ) const;
-	std::string	getBrainIdea( int const & idx ) const;
-	void		setBrainIdea( int const & idx, std::string const & raw );
+	std::string		getType( void ) const;
+	virtual void	makeSound( void ) const = 0;
 
 };
 

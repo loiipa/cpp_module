@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 00:49:49 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/14 16:26:14 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/16 16:46:57 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ WrongAnimal::WrongAnimal( WrongAnimal const & src ) : type ( src.type )
 /* Destructor */
 WrongAnimal::~WrongAnimal( void )
 {
-	std::cout << "<WrongAnimal string Destructor>" << std::endl;
+	std::cout << "<WrongAnimal Destructor>" << std::endl;
 	return ;
 }
 
@@ -55,22 +55,27 @@ void			WrongAnimal::makeSound( void ) const
 /* Constructor */
 WrongCat::WrongCat( void )
 {
-	this->WrongAnimal::type = "WrongCat";
 	std::cout << "<WrongCat default Constructor>" << std::endl;
+	this->brain = new Brain();
+	this->WrongAnimal::type = "WrongCat";
 	return ;
 }
 
 WrongCat::WrongCat( WrongCat const & src )
 {
-	this->WrongAnimal::type = src.getType();
 	std::cout << "<WrongCat copy Constructor>" << std::endl;
+	this->brain = src.getBrain();
+	this->WrongAnimal::type = src.getType();
 	return ;
 }
 
 /* Destructor */
 WrongCat::~WrongCat( void )
 {
-	std::cout << "<WrongCat string Destructor>" << std::endl;
+	std::cout << "<WrongCat Destructor>" << std::endl;
+	if (this->brain)
+		delete this->brain;
+	this->brain = NULL;
 	return ;
 }
 
@@ -78,6 +83,7 @@ WrongCat::~WrongCat( void )
 WrongCat &	WrongCat::operator=( WrongCat const & rhs )
 {
 	std::cout << "<WrongCat assignation operator>" << std::endl;
+	this->brain = rhs.getBrain();
 	this->WrongAnimal::type = rhs.getType();
 	return *this;
 }
@@ -90,26 +96,48 @@ void			WrongCat::makeSound( void ) const
 	return ;
 }
 
+Brain*		WrongCat::getBrain( void ) const
+{
+	return this->brain;
+}
+
+std::string	WrongCat::getBrainIdea( int const & idx ) const
+{
+	return this->brain->getIdea( idx );
+}
+
+
+void		WrongCat::setBrainIdea( int const & idx, std::string const & raw )
+{
+	this->brain->setIdea( idx, raw );
+	return ;
+}
+
 
 /* Constructor */
 WrongDog::WrongDog( void )
 {
-	this->WrongAnimal::type = "WrongDog";
 	std::cout << "<WrongDog default Constructor>" << std::endl;
+	this->brain = new Brain();
+	this->WrongAnimal::type = "WrongDog";
 	return ;
 }
 
 WrongDog::WrongDog( WrongDog const & src )
 {
-	this->WrongAnimal::type = src.getType();
 	std::cout << "<WrongDog copy Constructor>" << std::endl;
+	this->brain = src.getBrain();
+	this->WrongAnimal::type = src.getType();
 	return ;
 }
 
 /* Destructor */
 WrongDog::~WrongDog( void )
 {
-	std::cout << "<WrongDog string Destructor>" << std::endl;
+	std::cout << "<WrongDog Destructor>" << std::endl;
+	if (this->brain)
+		delete this->brain;
+	this->brain = NULL;
 	return ;
 }
 
@@ -117,6 +145,7 @@ WrongDog::~WrongDog( void )
 WrongDog &	WrongDog::operator=( WrongDog const & rhs )
 {
 	std::cout << "<WrongDog assignation operator>" << std::endl;
+	this->brain = rhs.getBrain();
 	this->WrongAnimal::type = rhs.getType();
 	return *this;
 }
@@ -126,5 +155,21 @@ WrongDog &	WrongDog::operator=( WrongDog const & rhs )
 void			WrongDog::makeSound( void ) const
 {
 	std::cout << "Woof! Woof!" << std::endl;
+	return ;
+}
+Brain*		WrongDog::getBrain( void ) const
+{
+	return this->brain;
+}
+
+std::string	WrongDog::getBrainIdea( int const & idx ) const
+{
+	return this->brain->getIdea( idx );
+}
+
+
+void		WrongDog::setBrainIdea( int const & idx, std::string const & raw )
+{
+	this->brain->setIdea( idx, raw );
 	return ;
 }

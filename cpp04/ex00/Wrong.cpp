@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 00:49:49 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/14 16:26:14 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/16 15:48:55 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ WrongAnimal::WrongAnimal( WrongAnimal const & src ) : type ( src.type )
 /* Destructor */
 WrongAnimal::~WrongAnimal( void )
 {
-	std::cout << "<WrongAnimal string Destructor>" << std::endl;
+	std::cout << "<WrongAnimal Destructor>" << std::endl;
 	return ;
 }
 
@@ -70,7 +70,7 @@ WrongCat::WrongCat( WrongCat const & src )
 /* Destructor */
 WrongCat::~WrongCat( void )
 {
-	std::cout << "<WrongCat string Destructor>" << std::endl;
+	std::cout << "<WrongCat Destructor>" << std::endl;
 	return ;
 }
 
@@ -109,7 +109,7 @@ WrongDog::WrongDog( WrongDog const & src )
 /* Destructor */
 WrongDog::~WrongDog( void )
 {
-	std::cout << "<WrongDog string Destructor>" << std::endl;
+	std::cout << "<WrongDog Destructor>" << std::endl;
 	return ;
 }
 
