@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 00:49:49 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/15 14:46:17 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/16 11:23:54 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Animal::Animal( Animal const & src ) : type ( src.type )
 /* Destructor */
 Animal::~Animal( void )
 {
-	std::cout << "<Animal string Destructor>" << std::endl;
+	std::cout << "<Animal Destructor>" << std::endl;
 	return ;
 }
 

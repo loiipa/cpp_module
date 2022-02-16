@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:18:23 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/15 16:17:53 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/16 11:48:05 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,35 @@
 /* Constructor */
 Dog::Dog( void )
 {
+	std::cout << "<Dog default Constructor>" << std::endl;
 	this->brain = new Brain();
 	this->Animal::type = "Dog";
-	std::cout << "<Dog default Constructor>" << std::endl;
 	return ;
 }
 
 Dog::Dog( Dog const & src )
 {
+	std::cout << "<Dog copy Constructor>" << std::endl;
 	this->brain = new Brain( *src.brain );
 	this->Animal::type = src.getType();
-	std::cout << "<Dog copy Constructor>" << std::endl;
 	return ;
 }
 
 /* Destructor */
 Dog::~Dog( void )
 {
+	std::cout << "<Dog Destructor>" << std::endl;
 	delete this->brain;
-	std::cout << "<Dog string Destructor>" << std::endl;
 	return ;
 }
 
 /* Assignation Operator Overload */
 Dog &	Dog::operator=( Dog const & rhs )
 {
-	Brain::setBrain( *this->brain, *rhs.brain );
-	this->Animal::type = rhs.getType();
 	std::cout << "<Dog assignation operator>" << std::endl;
+	for (int i = 0; i < 100; i++)
+		this->brain->ideas[i] = rhs.brain->ideas[i];
+	this->Animal::type = rhs.getType();
 	return *this;
 }
 

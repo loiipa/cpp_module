@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:18:23 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/14 16:01:09 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/16 11:25:52 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,22 @@
 /* Constructor */
 Dog::Dog( void )
 {
-	this->Animal::type = "Dog";
 	std::cout << "<Dog default Constructor>" << std::endl;
+	this->Animal::type = "Dog";
 	return ;
 }
 
 Dog::Dog( Dog const & src )
 {
-	this->Animal::type = src.getType();
 	std::cout << "<Dog copy Constructor>" << std::endl;
+	this->Animal::type = src.getType();
 	return ;
 }
 
 /* Destructor */
 Dog::~Dog( void )
 {
-	std::cout << "<Dog string Destructor>" << std::endl;
+	std::cout << "<Dog Destructor>" << std::endl;
 	return ;
 }
 

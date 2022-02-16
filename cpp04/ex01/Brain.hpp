@@ -6,14 +6,14 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 16:46:36 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/15 16:31:15 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/16 11:56:35 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BRAIN_HPP
 # define BRAIN_HPP
 # include <string>
-
+# include <iostream>
 class Brain
 {
 public:
@@ -25,7 +25,8 @@ public:
 
 	Brain &	operator=( Brain const & rhs );
 
-	static void	setBrain( Brain & l, Brain const & r );
+	std::string	getIdea( int const & idx ) const;
+	void		setIdea( int const & idx, std::string const & raw );
 
 };
 

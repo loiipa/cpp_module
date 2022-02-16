@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:18:23 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/15 16:44:01 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/16 11:48:02 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,35 @@
 /* Constructor */
 Cat::Cat( void )
 {
+	std::cout << "<Cat default Constructor>" << std::endl;
 	this->brain = new Brain();
 	this->Animal::type = "Cat";
-	std::cout << "<Cat default Constructor>" << std::endl;
 	return ;
 }
 
 Cat::Cat( Cat const & src )
 {
+	std::cout << "<Cat copy Constructor>" << std::endl;
 	this->brain = new Brain( *src.brain );
 	this->Animal::type = src.getType();
-	std::cout << "<Cat copy Constructor>" << std::endl;
 	return ;
 }
 
 /* Destructor */
 Cat::~Cat( void )
 {
+	std::cout << "<Cat Destructor>" << std::endl;
 	delete this->brain;
-	std::cout << "<Cat string Destructor>" << std::endl;
 	return ;
 }
 
 /* Assignation Operator Overload */
 Cat &	Cat::operator=( Cat const & rhs )
 {
-	Brain::setBrain( *this->brain, *rhs.brain );
-	this->Animal::type = rhs.getType();
 	std::cout << "<Cat assignation operator>" << std::endl;
+	for (int i = 0; i < 100; i++)
+		this->brain->ideas[i] = rhs.brain->ideas[i];
+	this->Animal::type = rhs.getType();
 	return *this;
 }
 

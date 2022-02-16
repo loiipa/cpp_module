@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:18:23 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/15 16:44:06 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/16 11:25:46 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,22 @@
 /* Constructor */
 Cat::Cat( void )
 {
-	this->Animal::type = "Cat";
 	std::cout << "<Cat default Constructor>" << std::endl;
+	this->Animal::type = "Cat";
 	return ;
 }
 
 Cat::Cat( Cat const & src )
 {
-	this->Animal::type = src.getType();
 	std::cout << "<Cat copy Constructor>" << std::endl;
+	this->Animal::type = src.getType();
 	return ;
 }
 
 /* Destructor */
 Cat::~Cat( void )
 {
-	std::cout << "<Cat string Destructor>" << std::endl;
+	std::cout << "<Cat Destructor>" << std::endl;
 	return ;
 }
 
