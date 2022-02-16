@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 21:00:22 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/16 21:20:58 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/17 01:10:01 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 
 class MateriaSource : public IMateriaSource
 {
+private:
+
+	AMateria*	_inventory[4];
+
 public:
 	MateriaSource( void );
 	MateriaSource( MateriaSource const & src );
@@ -23,7 +27,7 @@ public:
 
 	MateriaSource & operator=( MateriaSource const & rhs );
 
-	void		learnMateria( AMateria* );
+	void		learnMateria( AMateria* m );
 	AMateria*	createMateria( std::string const & type );
 };
 

@@ -1,42 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/16 21:23:29 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/17 01:43:34 by cjang            ###   ########.fr       */
+/*   Created: 2022/02/16 23:46:34 by cjang             #+#    #+#             */
+/*   Updated: 2022/02/17 01:44:13 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "MateriaSource.hpp"
+#include "Character.hpp"
 
-MateriaSource::MateriaSource( void )
+Character::Character( void )
 {
 	return ;
 }
 
-MateriaSource::MateriaSource( MateriaSource const & src )
+Character::Character( std::string const & name ) : _name( name )
 {
+	return ;
+}
+
+
+Character::Character( Character const & src )
+{
+	this->_name = src.getName();
 	for (int i = 0; i < 4; i++)
 		this->_inventory[i] = src._inventory[i];
 	return ;
 }
 
-MateriaSource::~MateriaSource( void )
+Character::~Character( void )
 {
 	return ;
 }
 
-MateriaSource & MateriaSource::operator=( MateriaSource const & rhs )
+Character &	Character::operator=( Character const & rhs )
 {
+	this->_name = rhs.getName();
 	for (int i = 0; i < 4; i++)
 		this->_inventory[i] = rhs._inventory[i];
 	return *this;
 }
 
-void		MateriaSource::learnMateria( AMateria* m )
+std::string const &	Character::getName() const
+{
+	return this->_name;
+}
+
+void	Character::equip( AMateria* m )
 {
 	for (int i = 0; i < 4; i++)
 	{
@@ -50,17 +63,21 @@ void		MateriaSource::learnMateria( AMateria* m )
 	return ;
 }
 
-
-AMateria*	MateriaSource::createMateria( std::string const & type )
+void	Character::unequip( int idx )
 {
-	for (int i = 0; i < 4; i++)
-	{
-		// 이전에 초기화 해야할 듯
-		if (this->_inventory[i])
-		{
-			if (this->_inventory[i]->getType() == type)
-				return this->_inventory[i];
-		}
-	}
-	return 0;
+	if (idx < 0 || 3 < idx)
+		return ;
+
+	if (this->_inventory[idx])
+		this->_inventory[idx] = NULL;
+	return ;
+}
+
+void	Character::use( int idx, ICharacter & target )
+{
+	if (idx < 0 || 3 < idx)
+		return ;
+		
+	this->_inventory[idx]->use(target);
+	return ;
 }

@@ -6,13 +6,10 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 19:41:08 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/16 21:02:13 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/17 01:33:36 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "IMateriaSource.hpp"
-#include "ICharacter.hpp"
-#include "AMateria.hpp"
 #include "MateriaSource.hpp"
 #include "Character.hpp"
 #include "Ice.hpp"

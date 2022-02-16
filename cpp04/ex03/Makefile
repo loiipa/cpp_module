@@ -6,7 +6,7 @@
 #    By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 00:49:38 by cjang             #+#    #+#              #
-#    Updated: 2022/02/16 19:41:00 by cjang            ###   ########.fr        #
+#    Updated: 2022/02/17 01:40:53 by cjang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CXX = c++ -std=c++98
 CXXFLAGS = -Wall -Wextra -Werror
 TARGET = ex03
 
-SRCS = main.cpp
+SRCS = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(TARGET)

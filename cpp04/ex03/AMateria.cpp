@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/16 20:41:19 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/16 23:36:05 by cjang            ###   ########.fr       */
+/*   Created: 2022/02/16 23:19:29 by cjang             #+#    #+#             */
+/*   Updated: 2022/02/17 01:41:54 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
-# include "AMateria.hpp"
+#include "AMateria.hpp"
 
-class Ice : public AMateria
+AMateria::AMateria( std::string const & type ) : type( type )
 {
-public:
+	return ;
+}
 
-	Ice( void );
-	Ice( Ice const & src );
-	~Ice( void );
+std::string const & AMateria::getType( void ) const
+{
+	return this->type;
+}
 
-	Ice &		operator=( Ice const & rhs );
-	AMateria*	clone( void ) const;
-	void		use( ICharacter & target );
-
-};
-
-#endif
+void		AMateria::use( ICharacter & target )
+{
+	std::cout << "*" << target.getName() << "*" <<std::endl;
+	return ;
+}

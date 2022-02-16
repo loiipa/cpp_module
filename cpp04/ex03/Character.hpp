@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 20:44:57 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/16 20:48:00 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/17 01:40:10 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,27 @@
 # include "AMateria.hpp"
 # include <string>
 
-class Character
+class Character : public ICharacter
 {
+private:
+
+	std::string	_name;
+	AMateria*	_inventory[4];
+
 public:
-	~Character() {}
-	std::string const &	getName() const;
-	void	equip(AMateria* m);
-	void	unequip(int idx);
-	void	use(int idx, ICharacter & target);
+
+	Character( void );
+	Character( std::string const & name );
+	Character( Character const & src );
+	~Character( void );
+
+	Character &	operator=( Character const & rhs );
+
+	std::string const &	getName( void ) const;
+	void	equip( AMateria* m );
+	void	unequip( int idx );
+	void	use( int idx, ICharacter & target );
+	
 };
 
 #endif

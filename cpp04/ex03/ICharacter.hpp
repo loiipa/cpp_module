@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 19:46:25 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/16 21:02:33 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/17 01:20:16 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ICHARACTER_HPP
 # include "AMateria.hpp"
 # include <string>
+class AMateria;
 
 class ICharacter
 {
