@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 23:46:34 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/17 01:44:13 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/18 00:52:47 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void	Character::equip( AMateria* m )
 		if (!this->_inventory[i])
 		{
 			this->_inventory[i] = m;
+			std::cout << "equip - <" << i << "> "<< m->getType() << std::endl;
 			break ;
 		}
 	}
@@ -69,6 +70,7 @@ void	Character::unequip( int idx )
 		return ;
 
 	if (this->_inventory[idx])
+			std::cout << "unequip - <" << idx << "> "<< this->_inventory[idx]->getType() << std::endl;
 		this->_inventory[idx] = NULL;
 	return ;
 }
