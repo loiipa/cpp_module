@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 20:44:57 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/17 01:40:10 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/18 17:25:51 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ public:
 	void	equip( AMateria* m );
 	void	unequip( int idx );
 	void	use( int idx, ICharacter & target );
-	
+
+	static const int	idx;
+
 };
 
 #endif

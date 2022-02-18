@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 19:43:51 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/17 01:17:13 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/18 17:26:46 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@ class AMateria
 protected:
 
 	std::string	type;
-	// ...
 
 public:
+
+	AMateria( void );
 	AMateria( std::string const & type );
-	// copy constructor
-	// default constructor
-	// operator=
-	// destructor
-	// ...
+	AMateria( AMateria const & src );
+	virtual ~AMateria( void );
+
+	AMateria &	operator=( AMateria const & rhs );
 	std::string const & getType( void ) const;
 
 	virtual AMateria*	clone( void ) const = 0;

@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 00:49:47 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/16 23:15:39 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/18 13:39:50 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,4 @@ int	main()
 	// delete meta;
 	delete i;
 	delete j;
-	
-	// const Animal*	meta2;
-	// (void) meta2;
 }

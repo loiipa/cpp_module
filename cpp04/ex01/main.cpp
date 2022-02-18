@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 00:49:47 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/16 17:13:58 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/18 13:34:41 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,5 @@ int	main()
 	// 	std::cout << dog1.getBrainIdea(0) << std::endl;
 	// 	std::cout << dog2.getBrainIdea(0) << std::endl << std::endl;
 	// }
+	return 0;
 }

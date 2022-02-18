@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 00:49:47 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/14 16:36:32 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/18 13:28:47 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ int	main()
 
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
-	i->makeSound();
+
 	j->makeSound();
+	i->makeSound();
 	meta->makeSound();
 
 	delete meta;
@@ -39,6 +40,7 @@ int	main()
 
 	std::cout << d->getType() << " " << std::endl;
 	std::cout << c->getType() << " " << std::endl;
+
 	d->makeSound();
 	c->makeSound();
 	wa->makeSound();
