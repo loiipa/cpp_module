@@ -6,11 +6,12 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 00:01:16 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/21 15:51:41 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/21 20:41:27 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 void	test_case1(void)
 {
@@ -18,34 +19,34 @@ void	test_case1(void)
 	
 	try
 	{
-		Bureaucrat	kim1("kim1", 0);
-		std::cout << kim1 << std::endl;
+		Form		form1("form1", 0, 100);
+		std::cout << form1 << std::endl;
 	}
 	catch (const std::exception& e)
 	{
-		std::cout << "** kim1 - error **" << std::endl;
+		std::cout << "** form1 - error **" << std::endl;
 		std::cerr << e.what() << std::endl;
 	}
-	
+
 	try
 	{
-		Bureaucrat	kim2("kim2", 100);
-		std::cout << kim2 << std::endl;
+		Form		form2("form2", 100, 100);
+		std::cout << form2 << std::endl;
 	}
 	catch (const std::exception& e)
 	{
-		std::cout << "** kim2 - error **" << std::endl;
+		std::cout << "** form2 - error **" << std::endl;
 		std::cerr << e.what() << std::endl;
 	}
-	
+
 	try
 	{
-		Bureaucrat	kim3("kim3", 200);
-		std::cout << kim3 << std::endl;
+		Form		form3("form3", 100, 200);
+		std::cout << form3 << std::endl;
 	}
 	catch (const std::exception& e)
 	{
-		std::cout << "** kim3 - error **" << std::endl;
+		std::cout << "** form3 - error **" << std::endl;
 		std::cerr << e.what() << std::endl;
 	}
 	
@@ -54,42 +55,23 @@ void	test_case1(void)
 
 void	test_case2(void)
 {
-	std::cout << "==========    member function test    ==========\n" << std::endl;
+	std::cout << "==========         sign test          ==========\n" << std::endl;
 
-	Bureaucrat	lee1("lee1", 5);
-	Bureaucrat	lee2("lee2", 145);
+	Bureaucrat	lee1("lee1", 20);
+	Bureaucrat	lee2("lee2", 100);
 
-	try
-	{
-		while (1)
-		{
-			lee1.incrementGrade();
-			std::cout << lee1 << std::endl;
-		}
-	}
-	catch (const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
+	Form		form1("form1", 10, 50);
+	Form		form2("form2", 30, 50);
+	Form		form3("form3", 120, 140);
 
-	std::cout << std::endl;
+	lee1.SignForm( form1 );
+	lee2.SignForm( form1 );
 
-	try
-	{
-		while (1)
-		{
-			lee2.decrementGrade();
-			std::cout << lee2 << std::endl;
-		}
-	}
-	catch (const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-
-	std::cout << std::endl;
-	std::cout << lee1 << std::endl;
-	std::cout << lee2 << std::endl;
+	lee1.SignForm( form2 );
+	lee2.SignForm( form2 );
+	
+	lee1.SignForm( form3 );
+	lee2.SignForm( form3 );
 
 	std::cout << "\n================================================\n" << std::endl;
 }
@@ -97,8 +79,7 @@ void	test_case2(void)
 int	main(void)
 {
 	test_case1(); // 생성자 테스트
-	test_case2(); // 멤버함수 테스트
+	test_case2(); // sign 테스트
 
 	return 0;
 }
-

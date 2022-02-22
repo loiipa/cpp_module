@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 00:01:45 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/21 15:20:46 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/21 20:35:49 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,31 @@ void		Bureaucrat::decrementGrade( void )
 	++this->_grade;
 	return ;
 }
+
+void		Bureaucrat::SignForm( Form & form ) const
+{
+	if (form.getSigned() == false)
+	{
+		try
+		{
+			form.beSigned( *this );
+			std::cout << "<" << this->_name << "> signs <" << form.getName() << "> " << std::endl;
+		}
+		catch (const std::exception& e)
+		{
+			std::cout << "<" << this->_name << "> cannot sign <" << form.getName() << "> ";
+			std::cout << "because grade is too low to signed." << std::endl;
+		}
+	}
+	else
+	{
+		std::cout << "<" << this->_name << "> cannot sign <" << form.getName() << "> ";
+		std::cout << "because this form already signed." << std::endl;
+	}
+
+	return ;
+}
+
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {

@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 00:01:45 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/21 15:20:46 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/21 21:02:24 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,50 @@ void		Bureaucrat::decrementGrade( void )
 		throw GradeTooLowException();
 	++this->_grade;
 	return ;
+}
+
+void		Bureaucrat::SignForm( Form & form ) const
+{
+	if (form.getSigned() == false)
+	{
+		try
+		{
+			form.beSigned( *this );
+			std::cout << "<" << this->_name << "> signs <" << form.getName() << "> " << std::endl;
+		}
+		catch (const std::exception& e)
+		{
+			std::cout << "<" << this->_name << "> cannot sign <" << form.getName() << "> ";
+			std::cout << "because grade is too low to signed." << std::endl;
+		}
+	}
+	else
+	{
+		std::cout << "<" << this->_name << "> cannot sign <" << form.getName() << "> ";
+		std::cout << "because this form already signed." << std::endl;
+	}
+
+	return ;
+}
+
+void		Bureaucrat::executeForm( Form const & form )
+{
+	try
+	{
+		form.execute( *this );
+		std::cout << "<" << this->getName() << "> executes <" << form.getName() << ">" << std::endl;
+	}
+	catch (const Form::NotSignedException& e)
+	{
+		std::cout << "<" << this->getName() << "> can't executes <" << form.getName() << "> for this reason : "; 
+		std::cout << e.what() << std::endl;
+	}
+	catch (const Form::GradeTooLowException& e)
+	{
+		std::cout << "<" << this->getName() << "> can't executes <" << form.getName() << "> for this reason : "; 
+		std::cout << e.what() << std::endl;
+	}
+	
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
