@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 00:01:16 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/22 14:16:49 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/22 14:42:00 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	test_case1(void)
 	{
 		Form* form = cja.makeForm("Give me the 42money!", "42money");
 		std::cout << *form << std::endl;
+		delete form;
 	}
 	catch (const std::exception& e)
 	{
@@ -32,6 +33,7 @@ void	test_case1(void)
 	{
 		Form* form = cjang.makeForm("robotomy request", "claptrap");
 		std::cout << *form << std::endl;
+		delete form;
 	}
 	catch (const std::exception& e)
 	{
