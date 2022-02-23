@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 16:52:49 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/22 17:47:26 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/23 12:32:18 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,5 @@ Zombie*	zombieHorde(int N, std::string name)
 		zombie[i].initName(name + std::to_string(i));
 	return (zombie);
 }
-
-// #inclde sst
-// std::string str;
-// int number = 100;
-// streamstr ssintl;
-// ssint << number;
-// str = ssint.str();
+// to_string -> c++11버전이었음..
+// <sstream>에서 stringstream을 이용하여 int to string을 하면 됨.
