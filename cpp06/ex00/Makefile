@@ -6,7 +6,7 @@
 #    By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 00:49:38 by cjang             #+#    #+#              #
-#    Updated: 2022/02/23 13:26:47 by cjang            ###   ########.fr        #
+#    Updated: 2022/02/24 10:48:40 by cjang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CXX = c++ -std=c++98
 CXXFLAGS = -Wall -Wextra -Werror
 TARGET = convert
 
-SRCS = main.cpp
+SRCS = main.cpp Convert.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(TARGET)
