@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 23:09:54 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/24 11:35:46 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/24 14:47:41 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <iostream>
 # include <exception>
 # include <limits>		//std::numeric_limits
-# include <locale>		//std::locale, std::isprint
+# include <locale>		//std::isprint
 # include <cmath>		//isnan isinf
 
 class Convert
