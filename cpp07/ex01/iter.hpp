@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 11:35:19 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/25 21:24:59 by cjang            ###   ########.fr       */
+/*   Created: 2022/02/25 17:32:08 by cjang             #+#    #+#             */
+/*   Updated: 2022/02/25 21:18:51 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Convert.hpp"
+#ifndef ITER_HPP
+# define ITER_HPP
+# include <iostream>
 
-int	main(int argc, char *argv[])
+template< typename T >
+void	iter(T* arr, int const & len, void (&func)(T const &))
 {
-	if (argc != 2)
-	{
-		std::cout << "Invalid number of arguments." << std::endl;
-		return 0;
-	}
-
-	Convert		cv(argv[1]);
-
-	cv.printAll();
-	
-	return 0;
+	if (arr == NULL || len < 0)
+		return ;
+	for (int i = 0; i < len; i++)
+		func(arr[i]);
+	return ;
 }
+
+
+template< typename T >
+void 	printValue(T const & t)
+{
+	std::cout << t << std::endl;
+	return ;
+}
+
+#endif

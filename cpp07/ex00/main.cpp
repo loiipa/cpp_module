@@ -5,24 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 11:35:19 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/25 21:24:59 by cjang            ###   ########.fr       */
+/*   Created: 2022/02/25 17:13:02 by cjang             #+#    #+#             */
+/*   Updated: 2022/02/25 21:10:39 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Convert.hpp"
+#include "whatever.hpp"
 
-int	main(int argc, char *argv[])
+int	main( void )
 {
-	if (argc != 2)
-	{
-		std::cout << "Invalid number of arguments." << std::endl;
-		return 0;
-	}
+	int		a = 2;
+	int		b = 3;
 
-	Convert		cv(argv[1]);
+	::swap( a, b );
 
-	cv.printAll();
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
 	
+	std::string c = "chaine1";
+	std::string d = "chaine2";
+	
+	::swap(c, d);
+	
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+
 	return 0;
 }

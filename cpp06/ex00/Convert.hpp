@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 23:09:54 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/24 14:47:41 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/25 22:57:44 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,16 @@ public:
 	double		getDVal( void ) const;
 	bool		getValidCheck( void ) const;
 
-	void	toChar( void ) const;
-	void	toInt( void ) const;
-	void	toFloat( void ) const;
-	void	toDouble( void ) const;
+	char		toChar( void ) const;
+	int			toInt( void ) const;
+	float		toFloat( void ) const;
+	
+	void		printAll( void ) const;
+	void		printChar( void ) const;
+	void		printInt( void ) const;
+	void		printFloat( void ) const;
+	void		printDouble( void ) const;
 
 };
 
 #endif
-// char* -> string -> double( 우선순위 상위 )

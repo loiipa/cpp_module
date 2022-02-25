@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 17:13:40 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/25 06:14:07 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/25 11:39:20 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Base::~Base( void )
 	return ;
 }
 
-Base *	Base::generate( void )
+Base *	generate( void )
 {
 	int		idx;
 	
@@ -39,7 +39,7 @@ Base *	Base::generate( void )
 	return NULL;
 }
 
-void	Base::identify( Base* p )
+void	identify( Base* p )
 {
 	A*	a;
 	B*	b;
@@ -60,7 +60,7 @@ void	Base::identify( Base* p )
 	return ;
 }
 
-void	Base::identify( Base& p )
+void	identify( Base& p )
 {
 	try
 	{

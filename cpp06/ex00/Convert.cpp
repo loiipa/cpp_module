@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert.cpp                                        :+:      :+:    :+:   */
+/*   Convert.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 23:09:47 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/24 14:17:46 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/25 22:59:57 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,18 @@ Convert::Convert( std::string const & str ) : _sVal( str ), _dVal( 0 ), _validCh
 	{
 		this->_dVal = std::stod( str, &idx );
 		// std::cout << idx << "\t" << str.length() << std::endl;
-		if (str.length() > idx + 1 || (str.length() == idx + 1 && \
-		(str[idx] != 'f' || ( str[idx] == 'f' && static_cast<int>(str.find('.')) == -1))))
+		
+		if (str.length() == idx)
+			this->_validCheck = true;
+		else if (str.length() == idx + 1 && str[idx] == 'f')
 		{
-			throw (std::exception());
+			if (str.find("inf") == 0 || str.find("inf") == 1 || str.find("nan") == 0 || str.find("nan") == 1)
+				this->_validCheck = true;
+			else if (static_cast<int>(str.find('.')) != -1)
+				this->_validCheck = true;
 		}
-		this->_validCheck = true;
+		else
+			throw (std::exception());
 	}
 	catch (std::exception & e)
 	{
@@ -59,6 +65,7 @@ Convert &	Convert::operator=( Convert const & rhs )
 	this->_sVal = rhs.getSVal();
 	this->_dVal = rhs.getDVal();
 	this->_validCheck = rhs.getValidCheck();
+	
 	return *this;
 }
 
@@ -77,9 +84,34 @@ bool	Convert::getValidCheck( void ) const
 	return this->_validCheck;
 }
 
-void	Convert::toChar( void ) const
+void	Convert::printAll( void ) const
 {
-	char	c = static_cast<char>(this->getDVal());
+	this->printChar();
+	this->printInt();
+	this->printFloat();
+	this->printDouble();
+
+	return ;
+}
+
+char	Convert::toChar( void ) const
+{
+	return static_cast<char>(this->_dVal);
+}
+
+int		Convert::toInt( void ) const
+{
+	return static_cast<int>(this->_dVal);
+}
+
+float	Convert::toFloat( void ) const
+{
+	return static_cast<float>(this->_dVal);
+}
+
+void	Convert::printChar( void ) const
+{
+	char	c = this->toChar();
 	char	cMin = std::numeric_limits<char>::min();
 	char	cMax = std::numeric_limits<char>::max();
 
@@ -95,11 +127,13 @@ void	Convert::toChar( void ) const
 		std::cout << "'" << c << "'" << std::endl;
 	else
 		std::cout << "Non displayable" << std::endl;
+
+	return ;
 }
 
-void	Convert::toInt( void ) const
+void	Convert::printInt( void ) const
 {
-	int		i = static_cast<int>(this->getDVal());
+	int		i = this->toInt();
 	int		iMin = std::numeric_limits<int>::min();
 	int		iMax = std::numeric_limits<int>::max();
 	
@@ -111,28 +145,48 @@ void	Convert::toInt( void ) const
 		return ;
 	}
 	std::cout << i << std::endl;
+
+	return ;
 }
 
-void	Convert::toFloat( void ) const
+void	Convert::printFloat( void ) const
 {
-	float	f = static_cast<float>(this->getDVal());
-	float	fMin = std::numeric_limits<float>::min();
+	float	f = this->toFloat();
 	float	fMax = std::numeric_limits<float>::max();
 
 	std::cout << "float\t";
 
-	if ( this->getValidCheck() == false || \
-	( (this->getDVal() < fMin || this->getDVal() > fMax) && !isinf(this->getDVal()) ) )
+	if ( this->getValidCheck() == false )
 	{
 		std::cout << "impossible" << std::endl;
 		return ;
 	}
-	std::cout << f << "f" << std::endl;
+
+	if ( isinf(this->getDVal()) )
+		;
+	else if ( this->getDVal() < fMax * -1 || this->getDVal() > fMax )
+	{
+		std::cout << "impossible" << std::endl;
+		return ;
+	}
+	
+	if (f - this->toInt() == 0 && this->toInt() / 1000000 == 0)
+	{
+		std::cout.precision(1);
+		std::cout.setf( std::ios::fixed );
+		std::cout << f << "f" << std::endl;
+		std::cout.unsetf( std::ios::fixed );
+		std::cout.precision(6);
+	}
+	else
+		std::cout << f << "f" << std::endl;
+
+	return ;
 }
 
-void	Convert::toDouble( void ) const
+void	Convert::printDouble( void ) const
 {
-	double	d = static_cast<double>(this->getDVal());
+	double	d = this->getDVal();
 
 	std::cout << "double\t";
 
@@ -141,5 +195,17 @@ void	Convert::toDouble( void ) const
 		std::cout << "impossible" << std::endl;
 		return ;
 	}
-	std::cout << d << std::endl;
+
+	if (d - this->toInt() == 0)
+	{
+		std::cout.precision(1);
+		std::cout.setf( std::ios::fixed );
+		std::cout << d << std::endl;
+		std::cout.unsetf( std::ios::fixed );
+		std::cout.precision(6);
+	}
+	else
+		std::cout << d << std::endl;
+
+	return ;
 }

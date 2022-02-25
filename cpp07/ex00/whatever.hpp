@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 11:35:19 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/25 21:24:59 by cjang            ###   ########.fr       */
+/*   Created: 2022/02/25 17:12:49 by cjang             #+#    #+#             */
+/*   Updated: 2022/02/25 21:14:38 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Convert.hpp"
+#ifndef WHATEVER_HPP
+# define WHATEVER_HPP
 
-int	main(int argc, char *argv[])
+# include <iostream>
+
+template< typename T >
+void	swap( T & x, T & y )
 {
-	if (argc != 2)
-	{
-		std::cout << "Invalid number of arguments." << std::endl;
-		return 0;
-	}
-
-	Convert		cv(argv[1]);
-
-	cv.printAll();
-	
-	return 0;
+	T	tmp = x;
+	x = y;
+	y = tmp;
+	return ;
 }
+
+template< typename T >
+T const &	max( T const & x, T const & y )
+{
+	return( x > y ? x : y );
+}
+
+template< typename T >
+T const &	min( T const & x, T const & y )
+{
+	return( x < y ? x : y );
+}
+
+#endif

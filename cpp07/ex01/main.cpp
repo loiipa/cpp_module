@@ -5,24 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 11:35:19 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/25 21:24:59 by cjang            ###   ########.fr       */
+/*   Created: 2022/02/25 17:31:56 by cjang             #+#    #+#             */
+/*   Updated: 2022/02/25 21:18:20 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Convert.hpp"
+#include "iter.hpp"
 
-int	main(int argc, char *argv[])
+int	main( void )
 {
-	if (argc != 2)
-	{
-		std::cout << "Invalid number of arguments." << std::endl;
-		return 0;
-	}
+	int			len = 5;
+	int			iii[] = {1, 3, 5, 7, 9};
+	std::string	sss[] = {"hi", "my", "name", "is", "cjang"};
+	float		fff[] = {1.1f, 2.2f, 3.3f, 4.4f, 5.5f};
 
-	Convert		cv(argv[1]);
 
-	cv.printAll();
+	::iter(iii, len, printValue);
+	std::cout << std::endl;
+
+	::iter(sss, len, printValue);
+	std::cout << std::endl;
 	
-	return 0;
+	::iter(fff, len, printValue);
 }

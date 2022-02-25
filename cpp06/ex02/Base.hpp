@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 17:13:46 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/24 17:49:51 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/25 11:40:04 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ class Base
 {
 public:
 	virtual ~Base( void );
-	
-	Base *	generate( void );
-	void	identify( Base* p );
-	void	identify( Base& p );
 };
 
 class A : public Base {};
 class B : public Base {};
 class C : public Base {};
+
+Base *	generate( void );
+void	identify( Base* p );
+void	identify( Base& p );
 
 #endif
