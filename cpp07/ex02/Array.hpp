@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 23:34:36 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/26 01:02:57 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/26 21:59:38 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 		this->_arr = new T[0];
 		return ;
 	}
-	
+
 	Array( unsigned int n ) : _arrLen( n )
 	{
 		this->_arr = new T[n];
@@ -38,32 +38,42 @@ public:
 	Array( Array const & src ) : _arrLen( src._arrLen )
 	{
 		this->_arr = new T[src._arrLen];
-		
+
 		for (unsigned int i = 0; i < this->_arrLen; i++)
 			this->_arr[i] = src._arr[i];
 
 		return ;
 	}
-	// ~Array( void );
+
+	~Array( void )
+	{
+		delete [] _arr;
+		return ;
+	}
 
 	Array &	operator=( Array const & rhs )
 	{
 		delete this->_arr;
 		this->_arr = new T[rhs._arrLen];
 		this->_arrLen = rhs._arrLen;
-		
+
 		for (unsigned int i = 0; i < this->_arrLen; i++)
 			this->_arr[i] = rhs._arr[i];
 
 		return *this;
 	}
 
-	// T &		operator[]( int const & idx )
-	T &		operator[]( unsigned int const & idx )
+	T &		operator[]( long long const & idx )
 	{
-		// if (idx < 0 || idx >= _arrLen)
-		if( idx >= _arrLen )
-			throw std::exception(); 
+		if ( idx < 0 || idx >= _arrLen )
+			throw std::exception();
+		return _arr[idx];
+	}
+
+	const T &		operator[]( long long const & idx ) const
+	{
+		if ( idx < 0 || idx >= _arrLen )
+			throw std::exception();
 		return _arr[idx];
 	}
 
