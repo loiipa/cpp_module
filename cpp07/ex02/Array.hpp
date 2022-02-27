@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 23:34:36 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/26 21:59:38 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/27 13:50:55 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,14 +66,14 @@ public:
 	T &		operator[]( long long const & idx )
 	{
 		if ( idx < 0 || idx >= _arrLen )
-			throw std::exception();
+			throw OutOfIndexException();
 		return _arr[idx];
 	}
 
 	const T &		operator[]( long long const & idx ) const
 	{
 		if ( idx < 0 || idx >= _arrLen )
-			throw std::exception();
+			throw OutOfIndexException();
 		return _arr[idx];
 	}
 
@@ -81,6 +81,15 @@ public:
 	{
 		return this->_arrLen;
 	}
+
+	class OutOfIndexException : public std::exception
+	{
+		public:
+			const char* what( void ) const throw()
+			{
+				return "Out of index.";
+			}
+	};
 };
 
 #endif
