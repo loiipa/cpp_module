@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 17:13:40 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/25 11:39:20 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/27 16:42:35 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Base::~Base( void )
 Base *	generate( void )
 {
 	int		idx;
-	
+
 	std::srand(std::time(NULL));
 	idx = std::rand() % 3;
 
@@ -62,6 +62,10 @@ void	identify( Base* p )
 
 void	identify( Base& p )
 {
+	Base *pp = &p;
+	if (pp == NULL)
+		return ;
+
 	try
 	{
 		A&	a = dynamic_cast<A&>(p);
@@ -72,7 +76,7 @@ void	identify( Base& p )
 	{
 		;
 	}
-	
+
 	try
 	{
 		B&	b = dynamic_cast<B&>(p);
