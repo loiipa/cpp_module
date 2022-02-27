@@ -6,15 +6,15 @@
 #    By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 00:49:38 by cjang             #+#    #+#              #
-#    Updated: 2022/02/27 23:08:35 by cjang            ###   ########.fr        #
+#    Updated: 2022/02/28 02:23:09 by cjang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror
-TARGET = ex00
+TARGET = ex01
 
-SRCS = main.cpp
+SRCS = main.cpp span.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(TARGET)
