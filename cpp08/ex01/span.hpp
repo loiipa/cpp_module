@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 01:18:40 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/28 13:54:08 by cjang            ###   ########.fr       */
+/*   Updated: 2022/03/01 03:30:27 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,7 @@ public:
 	long long	longestSpan( void );
 	
 	template< typename Iter >
-	void		addIterNum( Iter const & begin, Iter const & end )
-	{
-		if (this->_v.capacity() - this->_v.size() < \
-			static_cast<size_t>(std::distance(begin, end)))
-			throw NotEnoughSpaceException();
-		
-		for (Iter it = begin; it != end; ++it)
-			_v.push_back(*it);
-
-		return ;
-	}
+	void		addNumber( Iter const & begin, Iter const & end );
 
 	class NotFoundRangeException : public std::exception
 	{
@@ -66,5 +56,19 @@ private:
 	std::vector<int>	_v;
 
 };
+
+template< typename Iter >
+void		Span::addNumber( Iter const & begin, Iter const & end )
+{
+	if (this->_v.capacity() - this->_v.size() < \
+		static_cast<size_t>(std::distance(begin, end)))
+		throw NotEnoughSpaceException();
+	
+	for (Iter it = begin; it != end; ++it)
+		_v.push_back(*it);
+
+	return ;
+}
+
 
 #endif

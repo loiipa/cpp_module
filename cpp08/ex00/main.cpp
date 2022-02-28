@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:11:33 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/28 13:01:54 by cjang            ###   ########.fr       */
+/*   Updated: 2022/03/01 02:44:12 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@
 int	main(void)
 {
 	std::vector<int>			v;
-	std::vector<int>::iterator	vIt;
+	std::vector<int>::iterator	vit;
 
 	for (size_t i = 0; i < 5; i++)
 		v.push_back(i);
 	try
 	{
 		std::cout << "<vector>" << std::endl;
-		vIt = easyfind(v, 2);
-		std::cout << "idx\t"<< std::distance(v.begin(), vIt) << std::endl;
-		std::cout << "value\t" << *vIt << "\n" << std::endl;
+		vit = easyfind(v, 2);
+		std::cout << "idx\t"<< std::distance(v.begin(), vit) << std::endl;
+		std::cout << "value\t" << *vit << "\n" << std::endl;
 	}
 	catch (const std::exception & e)
 	{
@@ -37,7 +37,7 @@ int	main(void)
 
 
 	std::deque<int>				d;
-	std::deque<int>::iterator	dIt;
+	std::deque<int>::iterator	dit;
 
 	d.push_front(10);
 	d.push_front(20);
@@ -45,9 +45,9 @@ int	main(void)
 	try
 	{
 		std::cout << "<deque>" << std::endl;
-		dIt = easyfind(d, 30);
-		std::cout << "idx\t"<< std::distance(d.begin(), dIt) << std::endl;
-		std::cout << "value\t" << *dIt << "\n" << std::endl;
+		dit = easyfind(d, 30);
+		std::cout << "idx\t"<< std::distance(d.begin(), dit) << std::endl;
+		std::cout << "value\t" << *dit << "\n" << std::endl;
 	}
 	catch (const std::exception & e)
 	{
@@ -56,7 +56,7 @@ int	main(void)
 
 
 	std::list<int>				l;
-	std::list<int>::iterator	lIt;
+	std::list<int>::iterator	lit;
 
 	l.push_back(40);
 	l.push_back(2);
@@ -64,9 +64,9 @@ int	main(void)
 	try
 	{
 		std::cout << "<list>" << std::endl;
-		lIt = easyfind(l, 2);
-		std::cout << "dist\t"<< std::distance(l.begin(), lIt) << std::endl;
-		std::cout << "value\t" << *lIt << "\n" << std::endl;
+		lit = easyfind(l, 2);
+		std::cout << "dist\t"<< std::distance(l.begin(), lit) << std::endl;
+		std::cout << "value\t" << *lit << "\n" << std::endl;
 	}
 	catch (const std::exception & e)
 	{

@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 01:18:20 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/28 15:59:54 by cjang            ###   ########.fr       */
+/*   Updated: 2022/03/01 03:31:07 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ int	main(void)
 
 	try
 	{
-		std::vector<int>	v;
+		std::vector<int>	v(10000);
 		Span	sp2 = Span(10000);
 
 		for (int i = 0; i < 10000; i++)
-			v.push_back(i * 100);
-		sp2.addIterNum(v.begin(), v.end());
+			v[i] = (i * 100);
+		sp2.addNumber(v.begin(), v.end());
 		std::cout << sp2.shortestSpan() << std::endl;
 		std::cout << sp2.longestSpan() << std::endl;
 	}

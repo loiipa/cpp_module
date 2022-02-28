@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:00:29 by cjang             #+#    #+#             */
-/*   Updated: 2022/03/01 02:13:06 by cjang            ###   ########.fr       */
+/*   Updated: 2022/03/01 04:04:43 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int main(void)
 	mstack.push(3);
 	mstack.push(5);
 	mstack.push(737);
-	//[...]
 	mstack.push(0);
 
 	MutantStack<int>::iterator it = mstack.begin();
@@ -42,5 +41,14 @@ int main(void)
 		++it;
 	}
 	std::stack<int> s(mstack);
+
+	std::cout << std::endl;
+	MutantStack<int>::reverse_iterator rit = mstack.rbegin();
+	MutantStack<int>::reverse_iterator rite = mstack.rend();
+	while (rit != rite)
+	{
+		std::cout << *rit << std::endl;
+		++rit;
+	}
 	return 0;
 }
