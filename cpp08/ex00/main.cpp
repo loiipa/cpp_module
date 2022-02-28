@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:11:33 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/28 01:17:00 by cjang            ###   ########.fr       */
+/*   Updated: 2022/02/28 13:01:54 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(void)
 	{
 		std::cout << "<vector>" << std::endl;
 		vIt = easyfind(v, 2);
-		std::cout << "idx\t"<< static_cast<int>(vIt - v.begin()) << std::endl;
+		std::cout << "idx\t"<< std::distance(v.begin(), vIt) << std::endl;
 		std::cout << "value\t" << *vIt << "\n" << std::endl;
 	}
 	catch (const std::exception & e)
@@ -46,7 +46,7 @@ int	main(void)
 	{
 		std::cout << "<deque>" << std::endl;
 		dIt = easyfind(d, 30);
-		std::cout << "idx\t"<< static_cast<int>(dIt - d.begin()) << std::endl;
+		std::cout << "idx\t"<< std::distance(d.begin(), dIt) << std::endl;
 		std::cout << "value\t" << *dIt << "\n" << std::endl;
 	}
 	catch (const std::exception & e)
@@ -64,7 +64,8 @@ int	main(void)
 	try
 	{
 		std::cout << "<list>" << std::endl;
-		lIt = easyfind(l, 24);
+		lIt = easyfind(l, 2);
+		std::cout << "dist\t"<< std::distance(l.begin(), lIt) << std::endl;
 		std::cout << "value\t" << *lIt << "\n" << std::endl;
 	}
 	catch (const std::exception & e)
