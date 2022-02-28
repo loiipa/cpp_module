@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:00:27 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/28 19:28:14 by cjang            ###   ########.fr       */
+/*   Updated: 2022/03/01 02:13:13 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,15 @@ MutantStack<T> &	MutantStack<T>::operator=( MutantStack const & rhs )
 }
 
 template < typename T >
-void	MutantStack<T>::begin( void ) const
+typename MutantStack<T>::iterator	MutantStack<T>::begin( void )
 {
-	std::cout << *(this->c.begin()) << std::endl;
-	return ;
+	return this->c.begin();
 }
 
-// template < typename T >
-// typename std::stack<T>::container_type::iterator	MutantStack<T>::end( void ) const
-// {
-// 	return std::stack<T>::container_type::iterator.end();
-// }
+template < typename T >
+typename MutantStack<T>::iterator	MutantStack<T>::end( void )
+{
+	return this->c.end();
+}
 
 #endif

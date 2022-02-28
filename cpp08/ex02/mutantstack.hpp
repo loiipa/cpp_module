@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:00:39 by cjang             #+#    #+#             */
-/*   Updated: 2022/02/28 19:17:37 by cjang            ###   ########.fr       */
+/*   Updated: 2022/03/01 02:11:22 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <stack>
+# include <deque>
 
 template < typename T >
 class MutantStack : public std::stack<T>
@@ -30,8 +31,8 @@ public:
 
 
 	typedef typename std::stack<T>::container_type::iterator	iterator;
-	void		begin( void ) const;
-	// typename std::stack<T>::container_type::iterator 	end( void ) const;
+	typename MutantStack<T>::iterator		begin( void );
+	typename MutantStack<T>::iterator	 	end( void );
 
 private:
 
