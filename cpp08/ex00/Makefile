@@ -6,11 +6,11 @@
 #    By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 00:49:38 by cjang             #+#    #+#              #
-#    Updated: 2022/02/27 23:08:35 by cjang            ###   ########.fr        #
+#    Updated: 2022/03/01 14:23:31 by cjang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CXX = c++
+CXX = c++ -std=c++98
 CXXFLAGS = -Wall -Wextra -Werror
 TARGET = ex00
 
