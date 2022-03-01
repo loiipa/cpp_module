@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:11:33 by cjang             #+#    #+#             */
-/*   Updated: 2022/03/01 02:44:12 by cjang            ###   ########.fr       */
+/*   Updated: 2022/03/01 14:20:50 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(void)
 	{
 		std::cout << "<vector>" << std::endl;
 		vit = easyfind(v, 2);
-		std::cout << "idx\t"<< std::distance(v.begin(), vit) << std::endl;
+		std::cout << "dist\t"<< std::distance(v.begin(), vit) << std::endl;
 		std::cout << "value\t" << *vit << "\n" << std::endl;
 	}
 	catch (const std::exception & e)
@@ -46,7 +46,7 @@ int	main(void)
 	{
 		std::cout << "<deque>" << std::endl;
 		dit = easyfind(d, 30);
-		std::cout << "idx\t"<< std::distance(d.begin(), dit) << std::endl;
+		std::cout << "dist\t"<< std::distance(d.begin(), dit) << std::endl;
 		std::cout << "value\t" << *dit << "\n" << std::endl;
 	}
 	catch (const std::exception & e)

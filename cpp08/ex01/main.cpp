@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 01:18:20 by cjang             #+#    #+#             */
-/*   Updated: 2022/03/01 03:31:07 by cjang            ###   ########.fr       */
+/*   Updated: 2022/03/01 14:17:39 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(void)
 		sp.addNumber(17);
 		sp.addNumber(9);
 		sp.addNumber(11);
-
+		// sp.addNumber(0);	//exception
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
 	}
@@ -48,5 +48,19 @@ int	main(void)
 		std::cerr << e.what() << '\n';
 	}
 
+	try
+	{
+		Span sp = Span(5);
+
+		sp.addNumber(5);
+		// sp.addNumber(11); //not exception
+
+		std::cout << sp.shortestSpan() << std::endl;
+		std::cout << sp.longestSpan() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 
 }

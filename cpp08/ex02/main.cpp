@@ -6,7 +6,7 @@
 /*   By: cjang <cjang@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:00:29 by cjang             #+#    #+#             */
-/*   Updated: 2022/03/01 04:04:43 by cjang            ###   ########.fr       */
+/*   Updated: 2022/03/01 14:19:57 by cjang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,18 @@ int main(void)
 	mstack.push(5);
 	mstack.push(17);
 
-	std::cout << mstack.top() << std::endl;
+	std::cout << "top\t" << mstack.top() << std::endl;
 
 	mstack.pop();
 
-	std::cout << mstack.size() << std::endl;
+	std::cout << "size\t"  << mstack.size() << std::endl;
 
 	mstack.push(3);
 	mstack.push(5);
 	mstack.push(737);
 	mstack.push(0);
+
+	std::cout << "size\t"  << mstack.size() << std::endl;
 
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
@@ -42,6 +44,7 @@ int main(void)
 	}
 	std::stack<int> s(mstack);
 
+	/* add */
 	std::cout << std::endl;
 	MutantStack<int>::reverse_iterator rit = mstack.rbegin();
 	MutantStack<int>::reverse_iterator rite = mstack.rend();
